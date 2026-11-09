@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Glow Beauty | Skincare Store</title>
+
+    <link rel="stylesheet" href="styl.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-spa"></i>
+            </div>
+            <div>
+                <h2>GLOW<span>BEAUTY</span></h2>
+                <small>SKINCARE STORE</small>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput"
+                placeholder="Cari produk skincare...">
+            <button onclick="searchProducts()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <div class="header-actions">
+            <button class="cart-button" onclick="openCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Keranjang</span>
+                <b id="cartCount">0</b>
+            </button>
+        </div>
+    </header>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#products">Produk</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-label">WELCOME TO GLOW BEAUTY</span>
+
+            <h1>Reveal Your Natural <span>Beauty</span></h1>
+
+            <p>
+                Temukan skincare terbaik untuk merawat kulitmu.
+                Rawat kulit, pancarkan kecantikan alami setiap hari.
+            </p>
+
+            <a href="#products" class="hero-btn">
+                Belanja Sekarang
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="hero-decoration">
+            <i class="fa-solid fa-spa"></i>
+            <span>YOUR SKIN, YOUR GLOW</span>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section class="features">
+        <div class="feature">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+                <h4>Pengiriman Cepat</h4>
+                <p>Pesanan diproses dengan baik</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <i class="fa-solid fa-shield-heart"></i>
+            <div>
+                <h4>Produk Terpercaya</h4>
+                <p>Belanja lebih nyaman</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <i class="fa-solid fa-heart"></i>
+            <div>
+                <h4>Beauty Collection</h4>
+                <p>Lengkapi skincare routine</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- KATEGORI -->
+    <section class="category-section">
+        <div class="section-heading">
+            <span>EXPLORE</span>
+            <h2>Kategori Produk</h2>
+        </div>
+
+        <div class="categories">
+            <button class="category-btn active" onclick="filterCategory('Semua', this)">
+                Semua Produk
+            </button>
+
+            <button class="category-btn" onclick="filterCategory('Cleanser', this)">
+                Cleanser
+            </button>
+
+            <button class="category-btn" onclick="filterCategory('Toner', this)">
+                Toner
+            </button>
+
+            <button class="category-btn" onclick="filterCategory('Serum', this)">
+                Serum
+            </button>
+
+            <button class="category-btn" onclick="filterCategory('Moisturizer', this)">
+                Moisturizer
+            </button>
+
+            <button class="category-btn" onclick="filterCategory('Sunscreen', this)">
+                Sunscreen
+            </button>
+        </div>
+    </section>
+
+    <!-- PRODUK -->
+    <main class="products-section" id="products">
+
+        <div class="section-heading">
+            <span>OUR COLLECTION</span>
+            <h2>Produk Skincare</h2>
+            <p>Pilih produk favoritmu dan mulai perawatan kulitmu.</p>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <!-- Produk dibuat otomatis melalui JavaScript -->
+        </div>
+
+        <p id="emptyMessage" class="empty-message" hidden>
+            Produk tidak ditemukan.
+        </p>
+    </main>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="about-icon">
+            <i class="fa-solid fa-spa"></i>
+        </div>
+
+        <div>
+            <span>ABOUT OUR STORE</span>
+            <h2>Glow Beauty Skincare</h2>
+            <p>
+                Glow Beauty merupakan toko katalog skincare yang menyediakan
+                berbagai pilihan produk perawatan kulit. Kami ingin membantu
+                kamu menemukan produk yang sesuai dengan kebutuhan kulitmu.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <footer id="contact">
+        <div class="footer-logo">
+            <i class="fa-solid fa-spa"></i>
+            GLOW BEAUTY
+        </div>
+
+        <p>Discover your natural beauty with us.</p>
+
+        <div class="social-links">
+            <a href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="#" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <p class="copyright">
+            © 2026 Glow Beauty Skincare. All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- CART SIDEBAR -->
+    <div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2><i class="fa-solid fa-cart-shopping"></i> Keranjang Saya</h2>
+            <button onclick="closeCart()" class="close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Keranjang masih kosong.</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="total-row">
+                <span>Total Belanja</span>
+                <strong id="cartTotal">Rp0</strong>
+            </div>
+
+            <button class="checkout-btn" onclick="openCheckout()">
+                Checkout Sekarang
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal" id="checkoutModal">
+        <div class="checkout-box">
+
+            <div class="checkout-header">
+                <h2>Checkout Pesanan</h2>
+                <button onclick="closeCheckout()" class="close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form id="checkoutForm">
+
+                <label>Nama Lengkap</label>
+                <input type="text" id="customerName"
+                    placeholder="Masukkan nama lengkap" required>
+
+                <label>Nomor HP / WhatsApp</label>
+                <input type="tel" id="customerPhone"
+                    placeholder="Contoh: 08123456789"
+                    pattern="[0-9+ -]{10,18}" required>
+
+                <label>Alamat Pengiriman</label>
+                <textarea id="customerAddress"
+                    placeholder="Masukkan alamat lengkap"
+                    required></textarea>
+
+                <label>Metode Pembayaran</label>
+                <select id="paymentMethod" required>
+                    <option value="">Pilih pembayaran</option>
+                    <option value="COD">COD (Bayar di Tempat)</option>
+                    <option value="Transfer Bank">Transfer Bank</option>
+                    <option value="E-Wallet">E-Wallet</option>
+                </select>
+
+                <div class="checkout-summary">
+                    <h3>Ringkasan Pesanan</h3>
+                    <div id="checkoutItems"></div>
+
+                    <div class="summary-total">
+                        <span>Total Pembayaran</span>
+                        <strong id="checkoutTotal">Rp0</strong>
+                    </div>
+                </div>
+
+                <button type="submit" class="confirm-btn">
+                    Buat Pesanan
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ORDER SUCCESS -->
+    <div class="modal" id="successModal">
+        <div class="success-box">
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <h2>Pesanan Berhasil!</h2>
+            <p id="successMessage">
+                Terima kasih sudah berbelanja di Glow Beauty.
+            </p>
+
+            <button onclick="finishOrder()" class="confirm-btn">
+                Selesai
+            </button>
+        </div>
+    </div>
+
+    <script src="scrip.js"></script>
+</body>
+</html>
